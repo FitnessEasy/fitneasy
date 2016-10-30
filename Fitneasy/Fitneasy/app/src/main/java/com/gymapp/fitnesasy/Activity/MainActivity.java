@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle drawerToggle;
     Menu menu;
-    MenuItem itemDangNhap, menuITDangXuat, itThongBao;
+    MenuItem itemDangNhap, menuITDangXuat,itThongBao;
     GoogleApiClient mGoogleApiClient;
     CollapsingToolbarLayout collapsingToolbarLayout;
     AppBarLayout appBarLayout;
@@ -58,16 +58,20 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(MainActivity.this, "Vui lòng kết nối mạng", Toast.LENGTH_SHORT).show();
 
 
+        //   FacebookSdk.sdkInitialize(getApplicationContext());
+
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-
-
+        //  nav_view = (NavigationView) findViewById(R.id.nav_view);
+        // expandableListView = (ExpandableListView) findViewById(R.id.epMenu);
         appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
-
-
+        // collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        //setSupportActionBar(toolbar);
+      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-
+      //  appBarLayout.addOnOffsetChangedListener(this);
         Firebase.setAndroidContext(this);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -95,8 +99,9 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
         switch (id) {
-
-
+//        case R.id.nav_logout:
+//        FirebaseAuth.getInstance().signOut();
+//        startActivity(new Intent(this,SignInActivity.class));
         }
         return true;
     }
@@ -104,7 +109,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-
+     //   this.menu = menu;
 
         itemDangNhap = menu.findItem(R.id.itDangNhap);
         menuITDangXuat = menu.findItem(R.id.itDangXuat);
@@ -134,14 +139,19 @@ public class MainActivity extends AppCompatActivity
                 if (user == null) {
                     Intent intent = new Intent(this, SignInActivity.class);
                     startActivity(intent);
-                } else {
-                    email = user.getEmail();
-                    itemDangNhap.setTitle(email);
                 }
+                    else {
+                            email = user.getEmail();
+                            itemDangNhap.setTitle(email);
+                    }
                 break;
 
-
-            case R.id.itThongBao: {
+//                if(accessToken == null && googleSignInResult == null && modelDangNhap.LayCachedDangNhap(this).equals("")){
+//                    Intent iDangNhap = new Intent(this, DangNhapActivity.class);
+//                    startActivity(iDangNhap);
+            // }
+            case R.id.itThongBao:
+            {
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -149,27 +159,28 @@ public class MainActivity extends AppCompatActivity
                 Bundle bundle = new Bundle();
                 bundle.putString("scheduleId", "1");
 
-                bundle.putString("scheduleName", "Danh sách yêu thích");
-                bundle.putString("scheduleInfo", "");
+                bundle.putString("scheduleName", "fdsf");
+                bundle.putString("scheduleInfo", "fdsfds");
                 listScheduleFragment.setArguments(bundle);
                 fragmentTransaction.addToBackStack("TrangChuActivity");
-                fragmentTransaction.replace(R.id.themFragment, listScheduleFragment);
+                fragmentTransaction.replace(R.id.themFragment,listScheduleFragment);
                 fragmentTransaction.commit();
 
             }
             break;
 
-            case R.id.itMongMuon: {
+            case R.id.itMongMuon:
+            {
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 LoveExerciseFragment exerciseFragment = new LoveExerciseFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("like", "true");
-                bundle.putString("muscleName", "Gợi ý cho bạn");
+               // bundle.putString("muscleName", muscleType.getName());
                 exerciseFragment.setArguments(bundle);
                 fragmentTransaction.addToBackStack("MainActivity");
-                fragmentTransaction.replace(R.id.themFragment, exerciseFragment);
+                fragmentTransaction.replace(R.id.themFragment,exerciseFragment);
                 fragmentTransaction.commit();
 
 
@@ -177,11 +188,24 @@ public class MainActivity extends AppCompatActivity
             break;
 
             case R.id.itDangXuat:
-                if (email != null) {
+                if(email!=null){
                     FirebaseAuth.getInstance().signOut();
-
-
+//                    this.menu.clear();
+//                    this.onCreateOptionsMenu(this.menu);
                 }
+//
+//                if(googleSignInResult != null){
+//                    Auth.GoogleSignInApi.signOut(mGoogleApiClient);
+//                    this.menu.clear();
+//                    this.onCreateOptionsMenu(this.menu);
+//
+//                }
+//
+//                if(!modelDangNhap.LayCachedDangNhap(this).equals("")){
+//                    modelDangNhap.CapNhatCachedDangNhap(this,"");
+//                    this.menu.clear();
+//                    this.onCreateOptionsMenu(this.menu);
+//                }
 
             case R.id.itSearch:
                 Intent intentTimKiem = new Intent(this, SearchActivity.class);
@@ -198,6 +222,7 @@ public class MainActivity extends AppCompatActivity
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
     }
+
 
 
     private boolean KiemTraKetNoiMang() {
