@@ -27,6 +27,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.gymapp.fitnesasy.Adapter.ViewPagerAdapter;
+import com.gymapp.fitnesasy.DataManager.FavoriteExerciseDataManager;
 import com.gymapp.fitnesasy.Fragment.ListScheduleFragment;
 import com.gymapp.fitnesasy.Fragment.LoveExerciseFragment;
 import com.gymapp.fitnesasy.R;
@@ -149,7 +150,7 @@ public class MainActivity extends AppCompatActivity
                 Bundle bundle = new Bundle();
                 bundle.putString("scheduleId", "1");
 
-                bundle.putString("scheduleName", "Danh sách yêu thích");
+                bundle.putString("scheduleName", "Gợi ý cho bạn");
                 bundle.putString("scheduleInfo", "");
                 listScheduleFragment.setArguments(bundle);
                 fragmentTransaction.addToBackStack("TrangChuActivity");
@@ -166,7 +167,7 @@ public class MainActivity extends AppCompatActivity
                 LoveExerciseFragment exerciseFragment = new LoveExerciseFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("like", "true");
-                bundle.putString("muscleName", "Gợi ý cho bạn");
+                bundle.putString("muscleName", "Danh sách yêu thích");
                 exerciseFragment.setArguments(bundle);
                 fragmentTransaction.addToBackStack("MainActivity");
                 fragmentTransaction.replace(R.id.themFragment, exerciseFragment);
@@ -180,8 +181,14 @@ public class MainActivity extends AppCompatActivity
                 if (email != null) {
                     FirebaseAuth.getInstance().signOut();
 
+                    FavoriteExerciseDataManager.email=null;
+                    itemDangNhap.setTitle("Đăng nhập");
+
 
                 }
+                break;
+
+
 
             case R.id.itSearch:
                 Intent intentTimKiem = new Intent(this, SearchActivity.class);
