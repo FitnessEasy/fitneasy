@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/bgToolbar</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/bgLogo</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>  <!-- Màu trắng cho tab được chọn -->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item> <!-- Màu trắng cho back -->
+    </style>
+
+    <!--đổi màu tool bar-->
+    <style name="menuitemcolor" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/tranparentBlack</item>
+        <item name="drawerArrowStyle">@style/changecolordrawertoogle</item>
+    </style>
+
+    <style name="changecolordrawertoogle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorWhite</item>
+    </style>
+
+    <style name="capfale" parent="TextAppearance.Design.Tab"> <!-- Đổi chữ hoa thành thường -->
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <declare-styleable name="PasswordEditText">
+        <attr name="useStrike" format="boolean"/>
+        <attr name="useValidate" format="boolean"/>
+    </declare-styleable>
+
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Background for the search query section (e.g. EditText) -->
+
+        <item name="android:textColorHint">@color/colorWhite</item>
+
+    </style>
+
+</resources>

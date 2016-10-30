@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+
+    <ProgressBar
+        android:id="@+id/progress_bar_MuscleType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="30dp"
+        />
+
+        <LinearLayout
+            android:id="@+id/lnMuscleTypeItem"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:selectableItemBackground"
+            >
+
+            <ImageView
+                android:id="@+id/imMuscleTypeItem"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical|start"
+                />
+
+                <TextView
+                    android:id="@+id/txtMuscleTypeItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Tên nhóm cơ"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+                    />
+
+
+        </LinearLayout>
+
+</FrameLayout>

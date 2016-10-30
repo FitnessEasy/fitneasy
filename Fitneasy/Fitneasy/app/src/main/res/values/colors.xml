@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FB8C00</color>
+    <color name="colorPrimaryDark">#FB8C00</color>
+    <color name="colorAccent">#000080</color> <!-- Màu  tab được chọn -->
+    <color name="backgroundColor">#d2d2e0</color>
+    <color name="textAppColor">#EF6C00</color>
+
+    <color name="bgToolbar">#FF9800</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="bgLogo">#f67122</color>
+    <color name="colorGray">#EF6C00</color>
+    <color name="colorFacebook">#FF9800</color>
+    <color name="colorGoogle">#da4835</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorRed">#FFF62226</color>
+    <color name="tranparentBlack">#B2000000</color>
+    <color name="colorSliderInActive">#8095a1</color>
+    <color name="colorTimer">#48AD01</color>
+    <color name="colorAppBar">#FF9800</color>
+
+
+</resources>

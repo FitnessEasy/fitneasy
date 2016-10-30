@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "702253444500",
+    "firebase_url": "https://fitneasy-d43a0.firebaseio.com",
+    "project_id": "fitneasy-d43a0",
+    "storage_bucket": "fitneasy-d43a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702253444500:android:bb4e34a3eda5a30a",
+        "android_client_info": {
+          "package_name": "com.gymapp.fitnesasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702253444500-jv70qhplo5ug9pvbv2rhrq1ibeeqlq0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjbwG8YX9NRqg0C39og55INQ5SZRQdSKo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

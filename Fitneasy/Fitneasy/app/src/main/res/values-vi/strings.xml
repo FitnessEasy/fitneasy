@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="LabelCreateAccount">TẠO TÀI KHOẢN</string>
+    <string name="InputHintEmail">Nhập email</string>
+    <string name="InputHintPassword">Nhập mật khẩu</string>
+    <string name="MessageToSignIn">Đã có tài khoản?, Đăng nhập tại đây</string>
+    <string name="LabelSignInAccount">ĐĂNG NHẬP</string>
+    <string name="MessageToSignUp">Chưa có tài khoản?, Đăng ký tại đây</string>
+</resources>

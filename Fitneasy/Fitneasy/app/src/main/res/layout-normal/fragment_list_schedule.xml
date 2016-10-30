@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center_vertical"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:theme="@style/menuitemcolor"
+            app:titleTextColor="@color/colorWhite"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtInfoSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAppBar"
+                android:paddingBottom="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom|center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tuần 1"
+                android:textColor="@color/colorAppBar"
+                android:paddingBottom="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom|center_horizontal"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleViewSchedule0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="2dp"
+
+                ></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tuần 2"
+                android:textColor="@color/colorAppBar"
+                android:paddingBottom="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom|center_horizontal"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleViewSchedule1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="2dp"
+
+                ></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tuần 3"
+                android:textColor="@color/colorAppBar"
+                android:paddingBottom="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom|center_horizontal"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleViewSchedule2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="2dp"
+
+                ></android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tuần 4"
+                android:textColor="@color/colorAppBar"
+                android:paddingBottom="20dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom|center_horizontal"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleViewSchedule3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="2dp"></android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </ScrollView>
+</LinearLayout>
