@@ -270,9 +270,8 @@ public class WatchExercise extends AppCompatActivity implements ViewPager.OnPage
     public void onComplete() {
 
         ExerciseDetail exerciseDetail = exerciseDetailDataManager.getDataset().get(exerciseDetailDataManager.getDataset().size() - 1);
-        
 
-        if (exerciseId.contains(exerciseDetail.getExerciseId())) {
+        if (exerciseId.equals(exerciseDetail.getExerciseId())) {
             FragmentSliderWatchExercise fragmentSliderChiTietSanPham = new FragmentSliderWatchExercise();
             Bundle bundle = new Bundle();
             bundle.putString("name", exerciseDetail.getName());
